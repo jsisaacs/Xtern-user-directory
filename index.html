@@ -8,26 +8,28 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <h1>User Directory</h1>
+  <div id="createUser">
+      <h2>Create New User</h2>
+      <form id="userForm">
+        <p>
+          <label for="userName"><strong>Name:</strong></label>
+          <input type="text" name="userName" autofocus required>
+        </p>
+        <p>
+          <label for="age"><strong>Age:</strong></label>
+          <input type="number" name="age" required>
+        </p>
+        <p>
+          <label for="favoriteColor"><strong>Favorite color:</strong></label>
+          <input type="color" value="#00FFCC" name="favoriteColor">
+        </p>
+    
+        <button type="submit">Go</button>
+        <button type="reset">Clear</button>
+      </form>
+  </div>
 
-  <form id="userForm">
-    <p>
-      <label for="userName">Name</label>
-      <input type="text" name="userName" autofocus>
-    </p>
-    <p>
-      <label for="age">Age</label>
-      <input type="number" name="age">
-    </p>
-    <p>
-      <label for="favoriteColor">Favorite color</label>
-      <input type="color" name="favoriteColor">
-    </p>
-
-    <button type="submit">Go</button>
-    <button type="reset">Clear</button>
-  </form>
-
+  <h2>User Directory</h2>
   <div id="users"></div>
 
   <script src="index.js"></script>

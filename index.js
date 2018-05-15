@@ -13,7 +13,6 @@
 // DAY 2
 const form = document.querySelector('form#userForm')
 
-
 function renderList(ev) {
   const form = ev.target
   const userName = form.userName.value
@@ -27,31 +26,25 @@ function renderList(ev) {
   
   const ageItem = document.createElement('li')
   ageItem.textContent = `Age: ${age}`
-  
-  const colorItem = document.createElement('li')
-  colorItem.textContent = 'Favorite Color: '
 
-  itemCollection = [nameItem, ageItem, colorItem]
+  itemCollection = [nameItem, ageItem]
 
-  function renderColor(favColor, item) {
-    const colorDiv = document.createElement('div')
-    colorDiv.style.backgroundColor = favColor
-    colorDiv.style.width = '6rem'
-    colorDiv.style.height = '3rem'
-    item.appendChild(colorDiv)
+  function renderColor(favColor) {
+    list.style.borderLeft = `6px solid ${favColor}`
+    list.style.backgroundColor = 'whitesmoke'
+    list.style.paddingTop = '1rem'
+    list.style.paddingBottom = '1rem'
   }
 
-  function renderListItem(favColor, item, collection) {
-    renderColor(favColor, item)
+  function renderListItem(favColor, collection) {
+    renderColor(favColor)
     list.appendChild(collection[0])
     list.appendChild(collection[1])
-    list.appendChild(collection[2])
   }
 
-  renderListItem(favoriteColor, colorItem, itemCollection)
+  renderListItem(favoriteColor, itemCollection)
   users.appendChild(list)
 }
-
 
 const handleSubmit = function(ev) {
   ev.preventDefault()
